@@ -1,4 +1,4 @@
-import logo from "@assets/sidebar/logo.svg";
+import logo from "@assets/sidebar/Logo.svg";
 import overview from "@assets/sidebar/chart";
 import project from "@assets/sidebar/projects";
 import organisation from "@assets/sidebar/organisation";
