@@ -28,6 +28,7 @@ export default function SideBar() {
               icon={organisation()}
               path={"/my-organisation"}
               title={"My organisation"}
+              numbers={2}
             />
           </section>
         </section>
@@ -56,7 +57,7 @@ export default function SideBar() {
             <div className="flex gap-5">
               <Image src={logout} alt="logout" />
 
-              <p className={`text-mainRed`}>Logout</p>
+              <p className={`text-mainRed font-medium`}>Logout</p>
             </div>
           </Link>
         </section>
