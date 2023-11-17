@@ -17,6 +17,7 @@ module.exports = {
         mainGray2:"#7C8DB5",
         mainGray7:"#E6EDFF",
         mainGra10:"#F1F0FC",
+        Secondary:"#8704C5"
   
       },
       boxShadow: {
