@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../../../theme";
 import { mockTransactions } from "../../../../mockData";
@@ -21,7 +21,10 @@ const Dashboard = () => {
   return (
     <Box m="20px">
       {/* HEADER */}
-         <ProjectsHeader text={"Here is the information about all your projects"} title={"Welcome Back, Marci"} />
+      <ProjectsHeader
+        text={"Here is the information about all your projects"}
+        title={"Welcome Back, Marci"}
+      />
       {/* GRID & CHARTS */}
       <Box
         display="grid"
@@ -36,6 +39,7 @@ const Dashboard = () => {
           display="flex"
           alignItems="center"
           justifyContent="center"
+          borderRadius={5}
         >
           <StatBox
             title="12,361"
@@ -50,6 +54,7 @@ const Dashboard = () => {
           />
         </Box>
         <Box
+          borderRadius={5}
           gridColumn="span 3"
           backgroundColor={colors.primary[400]}
           display="flex"
@@ -69,6 +74,7 @@ const Dashboard = () => {
           />
         </Box>
         <Box
+          borderRadius={5}
           gridColumn="span 3"
           backgroundColor={colors.primary[400]}
           display="flex"
@@ -88,6 +94,7 @@ const Dashboard = () => {
           />
         </Box>
         <Box
+          borderRadius={5}
           gridColumn="span 3"
           backgroundColor={colors.primary[400]}
           display="flex"
@@ -109,6 +116,7 @@ const Dashboard = () => {
 
         {/* ROW 2 */}
         <Box
+          borderRadius={5}
           gridColumn="span 8"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
@@ -201,6 +209,7 @@ const Dashboard = () => {
 
         {/* ROW 3 */}
         <Box
+          borderRadius={5}
           gridColumn="span 4"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
@@ -227,6 +236,7 @@ const Dashboard = () => {
           </Box>
         </Box>
         <Box
+          borderRadius={5}
           gridColumn="span 4"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
@@ -243,6 +253,7 @@ const Dashboard = () => {
           </Box>
         </Box>
         <Box
+          borderRadius={5}
           gridColumn="span 4"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
