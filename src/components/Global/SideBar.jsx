@@ -13,8 +13,8 @@ import Link from "next/link";
 
 export default function SideBar() {
   return (
-    <nav className="flex ">
-      <div className="pt-12 pb-8 h-screen flex flex-col justify-between">
+    <section className="flex">
+      <div className="w-[16vw] pt-12 pb-8 h-screen flex flex-col justify-between">
         <section className="space-y-16">
           <Image className="ml-8" alt="logo" src={logo} />
           <section className="flex flex-col ">
@@ -63,6 +63,6 @@ export default function SideBar() {
         </section>
       </div>
       <div className="h-[85vh] mt-20 w-[1.5px] bg-mainGray7" />
-    </nav>
+    </section>
   );
 }

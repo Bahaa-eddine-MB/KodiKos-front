@@ -7,7 +7,7 @@ const SideBarElement = ({ icon, title, path, numbers }) => {
   return (
     <>
       <Link
-        className="hover:bg-mainGray7 py-2  pl-8 flex justify-between items-center w-[15vw]"
+        className="hover:bg-mainGray7 py-2  pl-8 flex justify-between items-center w-[16vw]"
         href={path}
       >
         <div className="flex gap-6">
