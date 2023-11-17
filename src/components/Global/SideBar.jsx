@@ -24,6 +24,11 @@ export default function SideBar() {
               path={"/projects"}
               title={"Projects"}
             />
+             <SideBarElement
+              icon={overview()}
+              path={"/employees"}
+              title={"Employees"}
+            />
             <SideBarElement
               icon={organisation()}
               path={"/my-organisation"}

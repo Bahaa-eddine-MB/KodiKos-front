@@ -7,24 +7,24 @@ import avatar from "../../../public/assets/ProjectsPage/ProjectsHeader/avatar.sv
 export default function ProjectsHeader() {
   return (
    
-    <header className=" flex mr-4 justify-between mb-10 ml-7 w-">
+    <header className=" flex mr-4 justify-between mb-10 ml-7 ">
       <div className="">
         <h2 className="text-3xl font-semibold mb-1">Projects</h2>
         <p className="text-mainGray2">Here are your projects</p>
       </div>
-      <div className="flex w-[20%] items-start justify-evenly gap-1">
+      <div className="flex w-[28%] items-start justify-evenly gap-1">
         <div className="flex gap-[10px]">
    
-          <Image src={searchIcon} width={23} height={23}  className="text-black"/>
-          <Image src={bell} width={20} height={20} className="text-black" />
+          <Image src={searchIcon} width={23} height={23}  className="text-black" alt=""/>
+          <Image src={bell} width={20} height={20} className="text-black" alt=""/>
           </div>
           <div className="flex items-center gap-2">
             <div >
-              <Image src={avatar} width={25} height={25} />
+              <Image src={avatar} width={25} height={25} alt=""/>
             </div>
             <span>Marci Fumons</span>
             <div className="ml-[20px]">
-            <Image src={arrowDown} width={12} height={7}/>
+            <Image src={arrowDown} width={12} height={7} alt=""/>
             </div>
 
           </div>

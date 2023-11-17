@@ -3,9 +3,9 @@ import Image from 'next/image'
 
 export default function ProjectCard() {
     return(
-        <div className='bg-mainGra10 w-fit  rounded-[20px] px-4 pt-4 pb-7' >
+        <div className='bg-mainGra10 w-fit  rounded-[20px] px-4 pt-4 pb-7 transition-all duration-700 group hover:scale-105 hover:cursor-pointer' >
             <div className='flex gap-2 '>
-                <Image src={lamp} width={25} height={30}/>
+                <Image src={lamp} width={25} height={30} alt=''/>
                 <h2 className='text-primary text-lg font-semibold'>Project 1</h2>
             </div>
             <div className='mt-5 text-black opacity-50'>
