@@ -44,7 +44,7 @@ const Report = () => {
           error={errors.name?.message}
           inputProps={{
             placeholder: "Ex : Technical Services",
-            ...register("email"),
+            ...register("name"),
           }}
         />
         <DrobDownMenu
@@ -58,7 +58,7 @@ const Report = () => {
           error={errors.title?.message}
           inputProps={{
             placeholder: "Ex : Your title here",
-            ...register("email"),
+            ...register("title"),
           }}
         />
         <InputTextArea
@@ -66,7 +66,7 @@ const Report = () => {
           label={"Description"}
           inputProps={{
             placeholder: "Ex : Your description here",
-            ...register("email"),
+            ...register("description"),
           }}
         />
         <div className="flex gap-4">
@@ -80,7 +80,9 @@ const Report = () => {
           </button>
           <button
             className={`w-full rounded-md ${
-              !errors ? "bg-primary text-white" : "bg-gray-300 text-mainGray"
+              !errors.name && !errors.description && !errors.title
+                ? "bg-primary text-white"
+                : "bg-gray-300 text-mainGray"
             }`}
           >
             Submit
