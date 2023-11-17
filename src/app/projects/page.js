@@ -5,11 +5,16 @@ import ProjectCard from "@/components/ProjectsPage/ProjectCard"
 export default function ProjectsPage() {
     return (
       <>
-      <div className="mt-16 ml-80 mr-10 ">
+      <div className="mt-16 ml-7 mr-10 w-full">
         <ProjectsHeader />
-      <section className="w-full pt-5 pl-9 pb-16">
-        <h1 className="mb-7">Your Projects</h1>
+      <section className="w-full pt-5 pl-9 pb-16 rounded-[20px] border border-mainGray7 ">
+        <h1 className="mb-7 font-medium text-2xl">Your Projects</h1>
+        <div className="flex gap-10">
         <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        </div>
 
       </section>
       </div>

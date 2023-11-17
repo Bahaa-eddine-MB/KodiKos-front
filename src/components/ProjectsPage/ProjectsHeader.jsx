@@ -7,7 +7,7 @@ import avatar from "../../../public/assets/ProjectsPage/ProjectsHeader/avatar.sv
 export default function ProjectsHeader() {
   return (
    
-    <header className=" flex mr-4 justify-between mb-10">
+    <header className=" flex mr-4 justify-between mb-10 ml-7 w-">
       <div className="">
         <h2 className="text-3xl font-semibold mb-1">Projects</h2>
         <p className="text-mainGray2">Here are your projects</p>

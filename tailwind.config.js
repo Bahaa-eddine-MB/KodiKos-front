@@ -15,7 +15,16 @@ module.exports = {
         mainYellow:"#ED9731",
         mainGreen:"#55DD4A",
         mainGray2:"#7C8DB5",
-        mainGray7:"#E6EDFF"
+        mainGray7:"#E6EDFF",
+        mainGra10:"#F1F0FC",
+  
+      },
+      boxShadow: {
+        'light': '0 10px 20px rgba(112, 144, 176, 0.1)',
+
+      },
+      gridTemplateColumns: {
+        'myGrid': 'repeat(auto-fill, minmax(350px, 1fr))',
       },
     },
   },
