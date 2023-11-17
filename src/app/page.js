@@ -12,6 +12,7 @@ import OfrreCard from "@/components/OffreCard";
 import SliderComponent from "@/components/LandingPage/Slider";
 import avatar from "@assets/avatar.png";
 import Footer from "@/components/Footer";
+
 export default function Home() {
   return (
     <main className="container mx-auto">
