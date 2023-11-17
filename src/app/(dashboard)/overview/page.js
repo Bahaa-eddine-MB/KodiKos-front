@@ -1,69 +1,266 @@
-"use client";
-import React, { useState } from "react";
-import Image from "next/image";
-import office1 from "@assets/overview/office1.svg";
-import office2 from "@assets/overview/office2.svg";
-import office3 from "@assets/overview/office3.svg";
-import office4 from "@assets/overview/office4.svg";
-import office5 from "@assets/overview/office5.svg";
-import office6 from "@assets/overview/office6.svg";
-import office7 from "@assets/overview/office7.svg";
+"use client"
+import { Box, IconButton, Typography, useTheme } from "@mui/material";
+import { tokens } from "../../../../theme";
+import { mockTransactions } from "../../../../mockData";
+import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
+import EmailIcon from "@mui/icons-material/Email";
+import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
+import PersonAddIcon from "@mui/icons-material/PersonAdd";
+import TrafficIcon from "@mui/icons-material/Traffic";
+import LineChart from "@components/overview/LineChart";
+import GeographyChart from "@components/overview/GeographyChart";
+import BarChart from "@components/overview/BarChart";
+import StatBox from "@components/overview/StatBox";
+import ProgressCircle from "@components/overview/ProgressCircle";
 import ProjectsHeader from "@/components/ProjectsPage/ProjectsHeader";
-import TroubleShoot from "@/components/overview/troubleshoot";
 
 const Dashboard = () => {
-  const [isOpen, setOpen] = useState(false);
-  const closePopup = () => {
-    setOpen(false);
-  };
-  const openPopup = () => {
-    setOpen(true);
-  };
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+
   return (
-    <div className="mt-16 ml-7 mr-10 w-full pb-8 ">
-      <ProjectsHeader
-        text={"Here are your offices"}
-        title={"My organisation"}
-      />
-      <section className="p-8 mt-6 border-2 border-gray-300 rounded-lg">
-        <div className="flex justify-center">
-          <Image className="h-[50%]" alt="" src={office1} />
-          <Image className="h-[50%]" alt="" src={office2} />
-          <Image alt="" src={office3} />
-        </div>
-        <div className="flex justify-center">
-          <div className="relative">
-              <TroubleShoot
-                description={
-                  "Perpetual sincerity out suspected necessary one but provision satisfied. Respect nothing use set waiting pursuit"
-                }
-                isOpen={isOpen}
-                onClose={closePopup}
-                name={"Department Name"}
-                title={"Title"}
-                type={"Trouble type "}
+    <Box m="20px">
+      {/* HEADER */}
+         <ProjectsHeader text={"Here is the information about all your projects"} title={"Welcome Back, Marci"} />
+      {/* GRID & CHARTS */}
+      <Box
+        display="grid"
+        gridTemplateColumns="repeat(12, 1fr)"
+        gridAutoRows="140px"
+        gap="20px"
+      >
+        {/* ROW 1 */}
+        <Box
+          gridColumn="span 3"
+          backgroundColor={colors.primary[400]}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <StatBox
+            title="12,361"
+            subtitle="Emails Sent"
+            progress="0.75"
+            increase="+14%"
+            icon={
+              <EmailIcon
+                sx={{ color: colors.blueAccent[600], fontSize: "26px" }}
               />
-            <Image alt="" src={office4} />
-            <div
-              onClick={openPopup}
-              className="absolute bottom-3 left-3 fill-red-600 transition-all duration-700 hover:fill-red-400 hover:cursor-pointer"
-            >
-              <svg
-                width="45"
-                height="45"
-                viewBox="0 0 45 45"
-                xmlns="http://www.w3.org/2000/svg"
+            }
+          />
+        </Box>
+        <Box
+          gridColumn="span 3"
+          backgroundColor={colors.primary[400]}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <StatBox
+            title="431,225"
+            subtitle="Sales Obtained"
+            progress="0.50"
+            increase="+21%"
+            icon={
+              <PointOfSaleIcon
+                sx={{ color: colors.blueAccent[600], fontSize: "26px" }}
+              />
+            }
+          />
+        </Box>
+        <Box
+          gridColumn="span 3"
+          backgroundColor={colors.primary[400]}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <StatBox
+            title="32,441"
+            subtitle="New Clients"
+            progress="0.30"
+            increase="+5%"
+            icon={
+              <PersonAddIcon
+                sx={{ color: colors.blueAccent[600], fontSize: "26px" }}
+              />
+            }
+          />
+        </Box>
+        <Box
+          gridColumn="span 3"
+          backgroundColor={colors.primary[400]}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <StatBox
+            title="1,325,134"
+            subtitle="Traffic Received"
+            progress="0.80"
+            increase="+43%"
+            icon={
+              <TrafficIcon
+                sx={{ color: colors.blueAccent[600], fontSize: "26px" }}
+              />
+            }
+          />
+        </Box>
+
+        {/* ROW 2 */}
+        <Box
+          gridColumn="span 8"
+          gridRow="span 2"
+          backgroundColor={colors.primary[400]}
+        >
+          <Box
+            mt="25px"
+            p="0 30px"
+            display="flex "
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Box>
+              <Typography
+                variant="h5"
+                fontWeight="600"
+                color={colors.grey[100]}
               >
-                <path d="M24.375 24.375H20.625V13.125H24.375M24.375 31.875H20.625V28.125H24.375M22.5 3.75C20.0377 3.75 17.5995 4.23498 15.3247 5.17726C13.0498 6.11953 10.9828 7.50065 9.24175 9.24175C5.72544 12.7581 3.75 17.5272 3.75 22.5C3.75 27.4728 5.72544 32.2419 9.24175 35.7583C10.9828 37.4994 13.0498 38.8805 15.3247 39.8227C17.5995 40.765 20.0377 41.25 22.5 41.25C27.4728 41.25 32.2419 39.2746 35.7583 35.7583C39.2746 32.2419 41.25 27.4728 41.25 22.5C41.25 20.0377 40.765 17.5995 39.8227 15.3247C38.8805 13.0498 37.4994 10.9828 35.7583 9.24175C34.0172 7.50065 31.9502 6.11953 29.6753 5.17726C27.4005 4.23498 24.9623 3.75 22.5 3.75Z" />
-              </svg>
-            </div>
-          </div>
-          <Image alt="" src={office5} />
-          <Image alt="" src={office6} />
-          <Image alt="" src={office7} />
-        </div>
-      </section>
-    </div>
+                Revenue Generated
+              </Typography>
+              <Typography
+                variant="h3"
+                fontWeight="bold"
+                color={colors.blueAccent[500]}
+              >
+                $59,342.32
+              </Typography>
+            </Box>
+            <Box>
+              <IconButton>
+                <DownloadOutlinedIcon
+                  sx={{ fontSize: "26px", color: colors.blueAccent[500] }}
+                />
+              </IconButton>
+            </Box>
+          </Box>
+          <Box height="250px" m="-20px 0 0 0">
+            <LineChart isDashboard={true} />
+          </Box>
+        </Box>
+        <Box
+          gridColumn="span 4"
+          gridRow="span 2"
+          backgroundColor={colors.primary[400]}
+          overflow="auto"
+        >
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            borderBottom={`4px solid ${colors.primary[500]}`}
+            colors={colors.grey[100]}
+            p="15px"
+          >
+            <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
+              Recent Transactions
+            </Typography>
+          </Box>
+          {mockTransactions.map((transaction, i) => (
+            <Box
+              key={`${transaction.txId}-${i}`}
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+              borderBottom={`4px solid ${colors.primary[500]}`}
+              p="15px"
+            >
+              <Box>
+                <Typography
+                  color={colors.blueAccent[500]}
+                  variant="h5"
+                  fontWeight="600"
+                >
+                  {transaction.txId}
+                </Typography>
+                <Typography color={colors.grey[100]}>
+                  {transaction.user}
+                </Typography>
+              </Box>
+              <Box color={colors.grey[100]}>{transaction.date}</Box>
+              <Box
+                backgroundColor={colors.blueAccent[500]}
+                p="5px 10px"
+                borderRadius="4px"
+              >
+                ${transaction.cost}
+              </Box>
+            </Box>
+          ))}
+        </Box>
+
+        {/* ROW 3 */}
+        <Box
+          gridColumn="span 4"
+          gridRow="span 2"
+          backgroundColor={colors.primary[400]}
+          p="30px"
+        >
+          <Typography variant="h5" fontWeight="600">
+            Campaign
+          </Typography>
+          <Box
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            mt="25px"
+          >
+            <ProgressCircle size="125" />
+            <Typography
+              variant="h5"
+              color={colors.blueAccent[500]}
+              sx={{ mt: "15px" }}
+            >
+              $48,352 revenue generated
+            </Typography>
+            <Typography>Includes extra misc expenditures and costs</Typography>
+          </Box>
+        </Box>
+        <Box
+          gridColumn="span 4"
+          gridRow="span 2"
+          backgroundColor={colors.primary[400]}
+        >
+          <Typography
+            variant="h5"
+            fontWeight="600"
+            sx={{ padding: "30px 30px 0 30px" }}
+          >
+            Sales Quantity
+          </Typography>
+          <Box height="250px" mt="-20px">
+            <BarChart isDashboard={true} />
+          </Box>
+        </Box>
+        <Box
+          gridColumn="span 4"
+          gridRow="span 2"
+          backgroundColor={colors.primary[400]}
+          padding="30px"
+        >
+          <Typography
+            variant="h5"
+            fontWeight="600"
+            sx={{ marginBottom: "15px" }}
+          >
+            Geography Based Traffic
+          </Typography>
+          <Box height="200px">
+            <GeographyChart isDashboard={true} />
+          </Box>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 
