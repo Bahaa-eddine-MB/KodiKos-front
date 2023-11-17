@@ -18,6 +18,7 @@ module.exports = {
         mainGray7:"#E6EDFF",
         mainGra10:"#F1F0FC",
         Secondary:"#8704C5"
+        
   
       },
       boxShadow: {
@@ -26,6 +27,7 @@ module.exports = {
       },
       gridTemplateColumns: {
         'myGrid': 'repeat(auto-fill, minmax(350px, 1fr))',
+        'myGrid1': 'repeat(auto-fill, minmax(300px, 1fr))'
       },
     },
   },
