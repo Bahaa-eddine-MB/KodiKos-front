@@ -18,7 +18,7 @@ export default function SideBar() {
         <section className="space-y-16">
           <Image className="ml-8" alt="logo" src={logo} />
           <section className="flex flex-col ">
-            <SideBarElement icon={overview()} path={"/"} title={"Overview"} />
+            <SideBarElement icon={overview()} path={"/overview"} title={"Overview"} />
             <SideBarElement
               icon={project()}
               path={"/projects"}

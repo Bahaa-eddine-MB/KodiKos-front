@@ -2,9 +2,10 @@ import Image from "next/image";
 
 export default function Login() {
   return (
-    <div className="flex flex-col items-center md:flex-row md:h-screen">
-      <div className="flex items-center justify-center w-full md:w-1/2">
-        <Image src="/cat.jpg" alt="Login Image" width={800} height={600} />
+    <div className="flex flex-col gap-16 items-center md:flex-row md:h-screen">
+      <div className="flex flex-col gap-8 items-center justify-center w-full md:w-1/2 bg-primary h-screen text-white">
+        <h1 className="font-semibold text-5xl">Welcome back !</h1>
+        <p className="text-2xl max-w-[25rem] text-center">Enter your personal details and start your journey with us</p>
       </div>
       <div className="flex flex-col items-center justify-center w-full md:w-1/4">
         <div className="w-full max-w-md space-y-8">
