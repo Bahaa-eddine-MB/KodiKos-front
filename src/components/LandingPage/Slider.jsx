@@ -14,7 +14,7 @@ const SliderComponent = ({ comments }) => {
   };
   return (
     <>
-      <div className="flex gap-12 pb-16 pt-8 overflow-hidden">
+      <div className="flex gap-24 pb-16 pt-8 overflow-hidden">
         <div className="w-[60%]">
           <div className="text-5xl font-semibold pb-8">
             What customer says about our platform
