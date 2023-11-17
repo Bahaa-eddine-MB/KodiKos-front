@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import logo from "@assets/logo.svg";
 import dashboard from "@assets/Dashboard.svg";
+import logo from "@assets/logo.svg";
 import InfoCard from "@/components/InfoCard";
 import project from "@assets/project.svg";
 import issue from "@assets/issue.svg";
