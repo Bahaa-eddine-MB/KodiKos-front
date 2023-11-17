@@ -1,0 +1,62 @@
+*{
+
+    font-family: 'poppins',sans-serif;
+
+}
+body{
+    padding: 30px 30px;
+    border-radius: 20px;
+    border-color: black;
+    background-color: white;
+    border-width: 2px;
+    border-style: solid;
+    height: fit-content;
+    width: 55%;
+    font-size: 10px;
+
+}
+
+h1{
+    font-weight: 600;
+    float: left;
+    font-size: 20px;
+}
+
+img{
+    float: left;
+    position: absolute;
+    margin-left: 50%;
+    margin-top: 15px;
+}
+
+.input_task_title,
+.input_starting_date,
+.input_deadline{
+    border: none;
+    border-bottom: 1px solid #7C8DB5;
+    color: #7C8DB5;
+    font-size: 16px;
+    width: 90%;
+    box-sizing: border-box;
+    outline: none;
+    padding: 15px 0;
+    margin-top: 20px;
+    white-space: nowrap;
+    text-orientation: upright;
+    writing-mode: vertical-lr;
+}
+
+  
+.multilineInput {
+    width: 90%;
+    padding: 8px;
+    font-size: 16px;
+    border-bottom: 1px solid #7C8DB5; /* Adjust the color as needed */
+    min-height: 100px; 
+    box-sizing: border-box;
+    white-space: pre-wrap; 
+}
+
+.multilineInput.empty::before{
+    content: attr(data-placeholder);
+}

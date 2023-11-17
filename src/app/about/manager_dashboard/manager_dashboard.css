@@ -1,0 +1,168 @@
+.section1,
+.section2{
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E6EDFF;
+    width:21%;
+    height: 185px;
+    padding: 20px;
+}
+
+.section1{
+    height: 185px;
+}
+
+.section2{
+    height: 160px;
+}
+
+
+.head{
+    display: inline;
+}
+.h1{
+    display: inline;
+    margin-right: 10px;
+    font-weight: 600;
+    font-family: 'poppins',sans-serif;
+    font-size: 10px;
+    text-align: left;
+    float: left;
+}
+
+.h1::after{
+    content: "...";
+    color:#6C717B ;
+    left: 70%;
+    top: -25px;
+
+    margin-right: 10px;
+    position: relative;
+    font-size: 16px;
+}
+
+#task{
+    font-family: 'poppins',sans-serif;
+    font-size: 8px;
+    font-weight: 200;
+    color: #6C717B;
+    margin-bottom: 10px;
+}
+
+.d_item,
+.hp_item,
+.mp_item,
+.lp_item{
+    font-family: 'poppins',sans-serif;
+    font-size: 7px;
+    font-weight: 200;
+    margin-right: 20px;
+    border-radius: 10px;
+    width: fit-content;
+    border-color: transparent;
+    border-style: solid;
+    color: white;
+    margin-bottom: 10px;
+    float: left;
+
+}
+
+.d_item{
+    background-color:#4A3AFF ;
+}
+
+.hp_item{
+    background-color:#ED3159 ;
+}
+
+.mp_item{
+    background-color: #ED9731;
+}
+
+.lp_item{
+    background-color: #8B929D;
+
+}
+
+.date{
+    font-family: 'poppins',sans-serif;
+    font-size: 8px;
+    font-weight: 200;
+    color: #6C717B;
+    margin-top: 10px;
+}
+
+.image_date{
+    float: left;
+    margin-right: 5px;
+}
+
+.complet,
+.pause{
+    font-family: 'poppins',sans-serif;
+    font-size: 8px;
+    font-weight: 200;
+    margin-top: 10px;
+}
+
+.complet{
+
+    color: #55DD4A;
+}
+
+.pause{
+
+    color: #E84040;
+}
+
+.complet_img,
+.pause_img{
+    float: left;
+    margin-right: 5px;
+}
+
+.bar{
+    height:1px;
+    width: 150px;
+    border-radius: 5px;
+    border-color: transparent;
+    background-color: #E6EDFF;
+}
+
+.cercle{
+    height:20px;
+    width: 20px;
+    margin-top: 10px;
+    border-radius: 20px;
+    border-color: transparent;
+    background-color: #E6EDFF;
+    float: left;
+}
+
+.nb_file_icon{
+    float: left;
+    margin-top: 14px;
+    margin-left: 100px;
+    margin-right: 5px;
+}
+
+.nb_file{
+    float: left;
+    margin-top: 14px;
+    color: #6C717B;
+    font-family: 'poppins',sans-serif;
+    font-size: 10px;
+}
+
+
+
+.bar_incomplet{
+    height:4px;
+    width: 150px;
+    border-radius: 5px;
+    border-color: transparent;
+    background: linear-gradient(to right, black 60%, #4A3AFF 40%);
+}
+
+
