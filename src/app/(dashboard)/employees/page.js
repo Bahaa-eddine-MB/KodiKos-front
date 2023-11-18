@@ -6,7 +6,7 @@ import EmployeCard from "@/components/Employees/employeeCard";
 export default function EmployeesForManager() {
   return (
     <div className="mt-16 ml-7 mr-10 w-full ">
-      <ProjectsHeader />
+      <ProjectsHeader title={"Employees"} text={"Here are your employees"}/>
       <Search />
       <div className="grid grid-cols-myGrid pb-8  gap-6">
         <EmployeCard />

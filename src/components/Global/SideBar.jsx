@@ -29,6 +29,7 @@ export default function SideBar() {
               path={"/employees"}
               title={"Employees"}
             />
+            <SideBarElement icon={alert()} path={"/report-issue"} title={"Report issue"} />
             <SideBarElement
               icon={organisation()}
               path={"/my-organisation"}

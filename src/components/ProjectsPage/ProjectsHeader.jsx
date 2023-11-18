@@ -4,13 +4,13 @@ import bell from "../../../public/assets/ProjectsPage/ProjectsHeader/bell-icon.s
 import searchIcon from "../../../public/assets/ProjectsPage/ProjectsHeader/search-icon.svg";
 import avatar from "../../../public/assets/ProjectsPage/ProjectsHeader/avatar.svg";
 
-export default function ProjectsHeader() {
+export default function ProjectsHeader({title,text}) {
   return (
    
-    <header className=" flex mr-4 justify-between mb-10 ml-7 ">
+    <header className=" flex mr-4 justify-between mb-10  ">
       <div className="">
-        <h2 className="text-3xl font-semibold mb-1">Projects</h2>
-        <p className="text-mainGray2">Here are your projects</p>
+        <h2 className="text-3xl font-semibold mb-1">{title}</h2>
+        <p className="text-mainGray2">{text}</p>
       </div>
       <div className="flex w-[28%] items-start justify-evenly gap-1">
         <div className="flex gap-[10px]">
