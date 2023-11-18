@@ -19,18 +19,18 @@ export default function Home() {
       <nav className="flex flex-row mx-8 justify-between items-center p-4">
         <Image src={logo} alt="logo" />
         <div className="flex mr-24 gap-8 text-mainGray2 font-normal">
-          <p className="transition-all duration-700 hover:cursor-pointer hover:text-Secondary">
+          <a className="transition-all duration-700 hover:cursor-pointer hover:text-Secondary" href="#home">
             Home
-          </p>
-          <p className="transition-all duration-700 hover:cursor-pointer hover:text-Secondary">
+          </a>
+          <a className="transition-all duration-700 hover:cursor-pointer hover:text-Secondary" href="#features">
             Features
-          </p>
-          <p className="transition-all duration-700 hover:cursor-pointer hover:text-Secondary">
+          </a>
+          <a className="transition-all duration-700 hover:cursor-pointer hover:text-Secondary" href="#subscribtion">
             Subscription
-          </p>
+          </a>
         </div>
       </nav>
-      <section className="flex flex-col items-center justify-center pt-20">
+      <section className="flex flex-col items-center justify-center pt-20" id="home">
         <h1 className="w-[50vw] text-5xl font-semibold text-center leading-relaxed">
           Improve your performance using{" "}
           <span className="text-Secondary">platform name</span>
@@ -56,7 +56,7 @@ export default function Home() {
       <section className="flex justify-center pt-16">
         <Image src={dashboard} alt="dashoard" />
       </section>
-      <section className="pt-20 flex flex-col items-center justify-center">
+      <section className="pt-20 flex flex-col items-center justify-center" id="features">
         <h2 className="text-5xl font-semibold text-center w-[50vw] pb-8">
           Great Deals For You
         </h2>
@@ -88,7 +88,7 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className="space-y-12 py-16">
+      <section className="space-y-12 py-16" id="">
         <div className="flex items-center gap-16 justify-center mx-16">
           <Image alt="" src={create} />
           <div className="flex flex-col gap-8 w-[40%]">
@@ -116,7 +116,7 @@ export default function Home() {
           <Image alt="" src={track} />
         </div>
       </section>
-      <section className="pt-20 flex flex-col items-center justify-center">
+      <section className="pt-20 flex flex-col items-center justify-center" id="subscribtion">
         <h2 className="text-5xl font-semibold text-center w-[50vw] pb-8">
           Subscription
         </h2>

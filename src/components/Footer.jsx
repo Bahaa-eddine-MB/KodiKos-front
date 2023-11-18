@@ -15,15 +15,15 @@ const Footer = () => {
         <div className="flex gap-8">
           <div className="flex flex-col gap-4 text-black">
             <span className="text-Secondary">Content</span>
-            <p>Home</p>
-            <p>Features</p>
-            <p>Subscriptions </p>
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#subscribtion">Subscriptions </a>
           </div>
           <div className="flex flex-col gap-4 text-black">
             <span className="text-Secondary">Socials</span>
-            <p>LinkedIn</p>
-            <p>Instagram</p>
-            <p>Twitter </p>
+            <a>LinkedIn</a>
+            <a>Instagram</a>
+            <a>Twitter</a>
           </div>
           <div className="flex flex-col gap-4 text-black">
             <span className="text-Secondary">Contact</span>
