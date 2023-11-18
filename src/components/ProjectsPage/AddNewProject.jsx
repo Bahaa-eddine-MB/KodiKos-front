@@ -24,7 +24,7 @@ export default function AddNewProject() {
           />
         </svg>
       </div>
-      <p className="text-primary font-medium duration-700 group-hover:text-white">
+      <p className="text-primary text-center font-medium duration-700 group-hover:text-white">
         Create a New Project
       </p>
     </div>
