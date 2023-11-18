@@ -40,6 +40,12 @@ export default function SideBar() {
                     title={"Overview"}
                   />
                 )}
+
+                <SideBarElement
+                  icon={project()}
+                  path={userRole === "admin" ? "/projects/admin" : "/projects"}
+                  title={"Projects"}
+                />
                 {userRole === "admin" && (
                   <SideBarElement
                     icon={overview()}
@@ -47,12 +53,6 @@ export default function SideBar() {
                     title={"Employees"}
                   />
                 )}
-                <SideBarElement
-                  icon={project()}
-                  path={"/projects"}
-                  title={"Projects"}
-                />
-
                 <SideBarElement
                   icon={alert()}
                   path={"/report-issue"}
