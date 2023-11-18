@@ -8,40 +8,40 @@ import check from "../../../public/assets/ProjectsPage/tasks/check.svg"
 import ProgressBar from "../Global/ProgressBar"
 
 
-export default function TaskCard(props) {
+export default function TaskCard({title, description, taskState, type, docs}) {
 
-
+    const documents = docs || []
     return(
        
         <div className="p-4 rounded-2xl border border-mainGray7">
             <div className="flex justify-between mb-3">
-                <h3>Create Home Screen ERP Website </h3>
+                <h3>{title}</h3>
                 <Image 
                     src={dots} width={24} height={24} alt="the 3 dots"/>
             </div>
-            <p className="text-[#6C717B] max-w-[90%] mb-4">Design the Home screen accordi to style, color and font.</p>
+            <p className="text-[#6C717B] max-w-[90%] mb-4">{description}</p>
             <div className="flex justify-around items-center mb-3">
-                <button className="bg-primary py-0.5 px-1.5 text-white rounded-[100px]" >Document</button>
-                <button className="bg-[#ED3159] py-0.5 px-1.5 text-white rounded-[100px]">High priority</button>
+                {documents.length === 0?<button className="bg-primary py-0.5 px-1.5 text-white rounded-[100px]" >Document</button> : <></>}
+                <button className="bg-[#ED3159] py-0.5 px-1.5 text-white rounded-[100px]">{taskState}</button>
             </div>
             <div className="flex justify-start gap-3 mb-4 text-[#6C717B]">
             <Image src={calender} alt="the calender icon"  />
-            <p>September 28, 2023</p>
+            <p>November 18, 2023</p>
 
             </div>
-            {props.taskState === "completed" && 
+            {taskState === "completed" && 
             <div className="flex gap-2">
                 <Image src={check} alt="the check icon" />
                 <span className="font-medium text-[#55DD4A]">Completed</span>
             </div>}
-            {props.taskState === "paused" &&
+            {taskState === "paused" &&
             <div className="flex gap-2">
                 <Image src={check} alt="the paused icon" />
                 <span className="font-medium text-[#E84040]">Paused</span>
             </div>
             }
             {/* status whether it is completed pause doing or upcoming */}
-            {props.taskState === "ongoing" && 
+            {taskState === "ongoing" && 
             <div className="mt-2 ">
 
             <ProgressBar percentage={80}/>
@@ -52,7 +52,7 @@ export default function TaskCard(props) {
                 <Image  src={ avatar} alt="the image of a human"/>
                 <div className="flex gap-1">
                 <Image src={attachement} alt="the attachment icon" width={16} height={16} />
-                <span>3</span>
+                <span>{documents.length}</span>
                 </div>
             </div>
            

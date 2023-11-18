@@ -22,7 +22,7 @@ export default function ProjectsAdmin() {
         <section className="w-full pt-5 pl-9 pb-16 rounded-[20px] border border-mainGray7 ">
         <h1 className="mb-7 font-medium text-2xl">Add a New Project</h1>
         <div className="flex gap-10">
-        {projects.map((p) => <ProjectCard key={p._id} title={p.title} description={p.description}/>)}
+        {projects.map((p) => <Link href={"/projects/"+"65582d41fe1f13fe344e317a"}><ProjectCard key={p._id} title={p.title} description={p.description}/></Link>)}
         <AddNewProject/>
        
         </div>

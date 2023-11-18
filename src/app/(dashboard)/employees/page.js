@@ -3,6 +3,7 @@ import ProjectsHeader from "@/components/ProjectsPage/ProjectsHeader";
 import Search from "@/components/Global/Search";
 import EmployeCard from "@/components/Employees/employeeCard";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 const axios = require('axios').default;
 
 export default function EmployeesForManager() {
@@ -23,7 +24,7 @@ export default function EmployeesForManager() {
       <ProjectsHeader title={"Employees"} text={"Here are your employees"}/>
       <Search />
       <div className="grid grid-cols-myGrid pb-8  gap-6">
-        {employees.map((e) => <EmployeCard key={e._id} name={e.name} role={e.role} email={e.email}/>)}
+        {employees.map((e) => <Link href={"/projects/"+e._id}><EmployeCard key={e._id} name={e.name} role={e.role} email={e.email}/></Link>)}
       </div>
     </div>
   );
