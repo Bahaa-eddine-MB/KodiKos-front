@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import Input from "../Global/Input";
 
 const ConfirmTask = ({ isOpen, onClose }) => {
   const [priority, setPriority] = useState("high");
@@ -117,7 +116,7 @@ const ConfirmTask = ({ isOpen, onClose }) => {
             With documents
           </div>
         </div>
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-between">
           <div className="flex flex-col gap-4">
             <div className="text-mainGray2">User Email</div>
             <p className="text-gray-300 text-sm">user@gmail.com</p>
@@ -125,7 +124,7 @@ const ConfirmTask = ({ isOpen, onClose }) => {
 
           <button
             onClick={onClose}
-            className="bg-transparent w-full  rounded-md text-primary self-end"
+            className="bg-transparent  rounded-md text-primary self-end"
           >
             Create
           </button>
