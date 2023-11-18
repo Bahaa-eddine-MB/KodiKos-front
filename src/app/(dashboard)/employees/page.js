@@ -27,7 +27,7 @@ export default function EmployeesForManager() {
       <div className="grid grid-cols-myGrid pb-8  gap-6">
         {employees.map((e,index) => {
           return (
-            <Link key={index} href={"/projects/" + e._id}>
+            <Link key={index} href={"/employees/user"}>
               <EmployeCard
                 name={e.name}
                 role={e.role}
