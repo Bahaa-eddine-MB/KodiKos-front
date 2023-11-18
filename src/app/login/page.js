@@ -1,6 +1,47 @@
-import Image from "next/image";
+"use client"
+import { useState } from "react";
+import { useRouter } from 'next/navigation'
+const axios = require('axios').default;
 
 export default function Login() {
+  const [password, setPassword] = useState("")
+  const [email, setEmail] = useState("")
+  const [error, setError] = useState(false)
+  const router = useRouter()
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setError(false)
+    const res = await axios.post('http://localhost:4000/api/user/login', {
+      email,
+      password
+    })
+    .then((res)=>{
+      if (res.status === 200){
+        const user = res.data
+        console.log(user)
+        switch (user.role){
+          case 'admin':
+            router.push('overview/')
+            break
+          case 'manager':
+            router.push('projects/')
+            break
+          case 'employee':
+            router.push('employees/')
+            break
+          default: 
+            router.push('employees/')      
+        }
+      } else {
+        setError(true)
+      }
+    })
+    .catch((err) => {
+      setError(true)
+    })
+    
+  }
   return (
     <div className="flex flex-col gap-16 items-center md:flex-row md:h-screen">
       <div className="flex flex-col gap-8 items-center justify-center w-full md:w-1/2 bg-primary h-screen text-white">
@@ -15,7 +56,8 @@ export default function Login() {
               Please sign in to your account.
             </p>
           </div>
-          <form className="mt-8 space-y-6">
+          {error? <p className="text-red-400">Email or password incorrect, Please try again!</p> : <></>}
+          <form className="mt-8 space-y-6" onSubmit={(e) => handleSubmit(e)}>
             <div>
               <label htmlFor="email" className="block font-bold text-gray-700">
                 Email address
@@ -23,6 +65,8 @@ export default function Login() {
               <input
                 id="email"
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 className="w-full px-4 py-3 mt-1 border-2 outline-none border-gray-300 rounded-md focus:border-indigo-500 focus:ring-0 focus:ring-indigo-200"
                 required
@@ -38,6 +82,8 @@ export default function Login() {
               <input
                 id="password"
                 type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
                 className="w-full px-4 py-3 mt-1 border-2 outline-none border-gray-300 rounded-md focus:border-indigo-500 focus:ring-0 focus:ring-indigo-200"
                 required

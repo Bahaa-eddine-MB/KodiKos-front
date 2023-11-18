@@ -1,11 +1,14 @@
 import Image from "next/image";
 import yes from "@assets/yes.svg";
-const OfrreCard = ({ title, price, list }) => {
+const OfrreCard = ({ title, price, type, list }) => {
   return (
     <>
       <div className="flex flex-col justify-center items-center gap-6 p-6 border-[1px] border-gray-200 rounded-2xl w-[22vw] shadow-lg drop-shadow-sm transition-all duration-700 hover:cursor-pointer hover:bg-purple-200 hover:scale-105">
         <div className="text-black font-semibold text-xl">{title}</div>
-        <p className="text-black text-6xl font-bold">{price}</p>
+        <p className="text-black text-6xl font-bold flex items-end gap-3">
+          {price}
+          <p className="text-gray-400 text-lg font-extralight">{type}</p>
+        </p>
         <div className="self-start pl-8 space-y-4 pt-4">
                {list.map((e, index) => {
           return (
