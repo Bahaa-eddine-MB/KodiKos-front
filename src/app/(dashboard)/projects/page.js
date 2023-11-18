@@ -12,6 +12,7 @@ export default function ProjectsPage() {
   useEffect(()=>{
     const getProjects = async () => {
       const res = await axios.get('http://localhost:4000/api/project/')
+      console.log(res);
       setProjects([...res.data])
     }
     getProjects()
@@ -23,7 +24,7 @@ export default function ProjectsPage() {
       <section className="w-full pt-5 pl-9 pb-16 rounded-[20px] border border-mainGray7 ">
         <h1 className="mb-7 font-medium text-2xl">Your Projects</h1>
         <div className="flex gap-10">
-        {projects.map((p) => <Link href={"/projects/"+p._id}><ProjectCard key={p._id} title={p.title} description={p.description}/></Link>)}
+        {projects.map((p) => <Link key={p._id} href={"/projects/"+p._id}><ProjectCard  title={p.title} description={p.description}/></Link>)}
         </div>
 
       </section>
